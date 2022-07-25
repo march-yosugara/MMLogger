@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MMLogger</name>
+    </assembly>
+    <members>
+        <member name="T:MMLogger.MMLogger">
+            <summary>
+            Simple Logging Class
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger.LogFilePath">
+            <summary>
+            Log file path
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger._enc">
+            <summary>
+            Log file encode
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger._writer">
+            <summary>
+            Log file writer
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger.OutLogLevel">
+            <summary>
+            Output log level
+            </summary>
+            <remarks>Logger outputs this level or higher</remarks>
+        </member>
+        <member name="T:MMLogger.MMLogger.LogLevel">
+            <summary>
+            Log level of Logger
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger.LogLevel.Debug">
+            <summary>
+            Lowest level for debug log
+            </summary>
+            <remarks>Output only specified string</remarks>
+        </member>
+        <member name="F:MMLogger.MMLogger.LogLevel.Info">
+            <summary>
+            For output informations
+            </summary>
+            <remarks>Output datetime and specified string</remarks>
+        </member>
+        <member name="F:MMLogger.MMLogger.LogLevel.Warn">
+            <summary>
+            Warning level
+            </summary>
+            <remarks>Output datetime, loglevel and specified string</remarks>
+        </member>
+        <member name="F:MMLogger.MMLogger.LogLevel.Error">
+            <summary>
+            Error level
+            </summary>
+            <remarks>Output datetime, loglevel and specified string</remarks>
+        </member>
+        <member name="F:MMLogger.MMLogger.LogLevel.Critical">
+            <summary>
+            Critical error level
+            </summary>
+            <remarks>Output datetime, loglevel and specified string</remarks>
+        </member>
+        <member name="F:MMLogger.MMLogger.LevelString">
+            <summary>
+            Log level strings
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger.LOG_CONTENT_SPLIT">
+            <summary>
+            Delimiter of columns(" | ")
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger.LOG_FORMAT_DATE">
+            <summary>
+            Format of datetime("yyyy/MM/dd HH:mm:ss")
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger.LOG_FORMAT02">
+            <summary>
+            Log format 2 columns
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger.LOG_FORMAT03">
+            <summary>
+            Log format 3 columns
+            </summary>
+        </member>
+        <member name="F:MMLogger.MMLogger.LOG_FORMAT04">
+            <summary>
+            Log format for IDs
+            </summary>
+        </member>
+        <member name="M:MMLogger.MMLogger.Open">
+            <summary>
+            Open for continuous use
+            </summary>
+        </member>
+        <member name="M:MMLogger.MMLogger.Write(MMLogger.MMLogger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
+            <summary>
+            Write log line
+            </summary>
+            <param name="level">LogLevel</param>
+            <param name="contents">Log strings</param>
+            <param name="lstID">Optional:Ids</param>
+        </member>
+        <member name="M:MMLogger.MMLogger.Close">
+            <summary>
+            Close for continuous use
+            </summary>
+        </member>
+        <member name="M:MMLogger.MMLogger.MakeLogLine(MMLogger.MMLogger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
+            <summary>
+            Make log line
+            </summary>
+            <param name="level">LogLevel</param>
+            <param name="contents">Log strings</param>
+            <param name="lstID">Optional:Ids</param>
+            <returns>LogLine</returns>
+        </member>
+    </members>
+</doc>
