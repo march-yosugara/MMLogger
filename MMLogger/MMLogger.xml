@@ -80,21 +80,6 @@
             Format of datetime("yyyy/MM/dd HH:mm:ss")
             </summary>
         </member>
-        <member name="F:MMLogger.MMLogger.LOG_FORMAT02">
-            <summary>
-            Log format 2 columns
-            </summary>
-        </member>
-        <member name="F:MMLogger.MMLogger.LOG_FORMAT03">
-            <summary>
-            Log format 3 columns
-            </summary>
-        </member>
-        <member name="F:MMLogger.MMLogger.LOG_FORMAT04">
-            <summary>
-            Log format for IDs
-            </summary>
-        </member>
         <member name="M:MMLogger.MMLogger.Open">
             <summary>
             Open for continuous use

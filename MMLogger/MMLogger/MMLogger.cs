@@ -83,18 +83,6 @@ namespace MMLogger
         /// Format of datetime("yyyy/MM/dd HH:mm:ss")
         /// </summary>
         public const string LOG_FORMAT_DATE = "yyyy/MM/dd HH:mm:ss";
-        /// <summary>
-        /// Log format 2 columns
-        /// </summary>
-        public const string LOG_FORMAT02 = "{0}" + LOG_CONTENT_SPLIT + "{1}" + LOG_CONTENT_SPLIT + "{2}";
-        /// <summary>
-        /// Log format 3 columns
-        /// </summary>
-        public const string LOG_FORMAT03 = "{0}" + LOG_CONTENT_SPLIT + "{1}" + LOG_CONTENT_SPLIT + "{2}";
-        /// <summary>
-        /// Log format for IDs
-        /// </summary>
-        public const string LOG_FORMAT04 = LOG_CONTENT_SPLIT + "{0} = {1}";
         #endregion
 
         #region Public methods
@@ -136,7 +124,8 @@ namespace MMLogger
         /// </summary>
         public static void Close()
         {
-            _writer.Dispose();
+            if (!(_writer is null))
+                _writer.Dispose();
         }
         #endregion
 
@@ -150,32 +139,35 @@ namespace MMLogger
         /// <returns>LogLine</returns>
         private static string MakeLogLine(LogLevel level, string contents, params (string name, string value)[] lstID)
         {
-            var logline = string.Empty;
+            var _sb = new StringBuilder();
 
             // Main strings
             switch (level)
             {
                 case LogLevel.Debug:
-                    logline = contents;
+                    // {contents}
+                    _sb.Append(contents);
                     break;
                 case LogLevel.Info:
-                    logline = string.Format(LOG_FORMAT02, DateTime.Now.ToString(LOG_FORMAT_DATE), contents);
+                    // {datetime} | {contents}
+                    _sb.Append(DateTime.Now.ToString(LOG_FORMAT_DATE)).Append(LOG_CONTENT_SPLIT).Append(contents);
                     break;
                 case LogLevel.Warn:
                 case LogLevel.Error:
                 case LogLevel.Critical:
-                    logline = string.Format(LOG_FORMAT03, DateTime.Now.ToString(LOG_FORMAT_DATE), LevelString[level], contents);
+                    // {datetime} | {level} | {contents}
+                    _sb.Append(DateTime.Now.ToString(LOG_FORMAT_DATE)).Append(LOG_CONTENT_SPLIT).Append(LevelString[level]).Append(LOG_CONTENT_SPLIT).Append(contents);
                     break;
             }
 
-            // Add IDs
+            // Add IDs([str] | {name} = {value})
             foreach (var (name, value) in lstID)
-                logline += string.Format(LOG_FORMAT04, name, value);
+                _sb.Append(LOG_CONTENT_SPLIT).Append(name).Append(" = ").Append(value);
 
-            // End of line
-            logline += Environment.NewLine;
+            // End of line([str]\r\n)
+            _sb.Append(Environment.NewLine);
 
-            return logline;
+            return _sb.ToString();
         }
         #endregion
     }
