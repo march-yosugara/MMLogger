@@ -4,88 +4,88 @@
         <name>MMLogger</name>
     </assembly>
     <members>
-        <member name="T:MMLogger.MMLogger">
+        <member name="T:MMLogger.Logger">
             <summary>
             Simple Logging Class
             </summary>
         </member>
-        <member name="F:MMLogger.MMLogger.LogFilePath">
+        <member name="F:MMLogger.Logger.LogFilePath">
             <summary>
             Log file path
             </summary>
         </member>
-        <member name="F:MMLogger.MMLogger._enc">
+        <member name="F:MMLogger.Logger.FileEncoding">
             <summary>
             Log file encode
             </summary>
         </member>
-        <member name="F:MMLogger.MMLogger._writer">
-            <summary>
-            Log file writer
-            </summary>
-        </member>
-        <member name="F:MMLogger.MMLogger.OutLogLevel">
+        <member name="F:MMLogger.Logger.OutLogLevel">
             <summary>
             Output log level
             </summary>
             <remarks>Logger outputs this level or higher</remarks>
         </member>
-        <member name="T:MMLogger.MMLogger.LogLevel">
+        <member name="F:MMLogger.Logger._writer">
+            <summary>
+            Log file writer
+            </summary>
+        </member>
+        <member name="T:MMLogger.Logger.LogLevel">
             <summary>
             Log level of Logger
             </summary>
         </member>
-        <member name="F:MMLogger.MMLogger.LogLevel.Debug">
+        <member name="F:MMLogger.Logger.LogLevel.Debug">
             <summary>
             Lowest level for debug log
             </summary>
             <remarks>Output only specified string</remarks>
         </member>
-        <member name="F:MMLogger.MMLogger.LogLevel.Info">
+        <member name="F:MMLogger.Logger.LogLevel.Info">
             <summary>
             For output informations
             </summary>
             <remarks>Output datetime and specified string</remarks>
         </member>
-        <member name="F:MMLogger.MMLogger.LogLevel.Warn">
+        <member name="F:MMLogger.Logger.LogLevel.Warn">
             <summary>
             Warning level
             </summary>
             <remarks>Output datetime, loglevel and specified string</remarks>
         </member>
-        <member name="F:MMLogger.MMLogger.LogLevel.Error">
+        <member name="F:MMLogger.Logger.LogLevel.Error">
             <summary>
             Error level
             </summary>
             <remarks>Output datetime, loglevel and specified string</remarks>
         </member>
-        <member name="F:MMLogger.MMLogger.LogLevel.Critical">
+        <member name="F:MMLogger.Logger.LogLevel.Critical">
             <summary>
             Critical error level
             </summary>
             <remarks>Output datetime, loglevel and specified string</remarks>
         </member>
-        <member name="F:MMLogger.MMLogger.LevelString">
+        <member name="F:MMLogger.Logger.LevelString">
             <summary>
             Log level strings
             </summary>
         </member>
-        <member name="F:MMLogger.MMLogger.LOG_CONTENT_SPLIT">
+        <member name="F:MMLogger.Logger.LOG_CONTENT_SPLIT">
             <summary>
             Delimiter of columns(" | ")
             </summary>
         </member>
-        <member name="F:MMLogger.MMLogger.LOG_FORMAT_DATE">
+        <member name="F:MMLogger.Logger.LOG_FORMAT_DATE">
             <summary>
             Format of datetime("yyyy/MM/dd HH:mm:ss")
             </summary>
         </member>
-        <member name="M:MMLogger.MMLogger.Open">
+        <member name="M:MMLogger.Logger.Open">
             <summary>
             Open for continuous use
             </summary>
         </member>
-        <member name="M:MMLogger.MMLogger.Write(MMLogger.MMLogger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
+        <member name="M:MMLogger.Logger.Write(MMLogger.Logger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
             <summary>
             Write log line
             </summary>
@@ -93,12 +93,12 @@
             <param name="contents">Log strings</param>
             <param name="lstID">Optional:Ids</param>
         </member>
-        <member name="M:MMLogger.MMLogger.Close">
+        <member name="M:MMLogger.Logger.Close">
             <summary>
             Close for continuous use
             </summary>
         </member>
-        <member name="M:MMLogger.MMLogger.MakeLogLine(MMLogger.MMLogger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
+        <member name="M:MMLogger.Logger.MakeLogLine(MMLogger.Logger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
             <summary>
             Make log line
             </summary>

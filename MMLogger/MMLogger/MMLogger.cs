@@ -8,7 +8,7 @@ namespace MMLogger
     /// <summary>
     /// Simple Logging Class
     /// </summary>
-    public static class MMLogger
+    public static class Logger
     {
         #region Logger settings
         /// <summary>
@@ -18,16 +18,16 @@ namespace MMLogger
         /// <summary>
         /// Log file encode
         /// </summary>
-        public static Encoding _enc = Encoding.GetEncoding(932);
-        /// <summary>
-        /// Log file writer
-        /// </summary>
-        public static StreamWriter _writer;
+        public static Encoding FileEncoding = Encoding.GetEncoding(932);
         /// <summary>
         /// Output log level
         /// </summary>
         /// <remarks>Logger outputs this level or higher</remarks>
         public static LogLevel OutLogLevel = LogLevel.Info;
+        /// <summary>
+        /// Log file writer
+        /// </summary>
+        private static StreamWriter _writer;
         #endregion
 
         #region Constants
@@ -92,7 +92,7 @@ namespace MMLogger
         public static void Open()
         {
             if (_writer is null)
-                _writer = new StreamWriter(LogFilePath, true, _enc);
+                _writer = new StreamWriter(LogFilePath, true, FileEncoding);
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace MMLogger
             
             if (_writer is null)
             {
-                using (var sw = new StreamWriter(LogFilePath, true, _enc))
+                using (var sw = new StreamWriter(LogFilePath, true, FileEncoding))
                     sw.Write(logline);
             }
             else
