@@ -26,7 +26,7 @@ And it should be fast.
 - Contents  
   Free chars  
 - ID, Value  
-  Option for key infmations  
+  Option for key infomations  
   Multiple of IDs can be set  
 
 ### Other
@@ -91,19 +91,19 @@ using MMLogger;
 ...
 Logger.LogFilePath = @"c:\mm.log";
 Logger.FileEncoding = Encoding.UTF8;
-Logger.OutLogLevel = Logger.LogLevel.Debug;
+Logger.OutLogLevel = LogLevel.Debug;
 ~~~
 
 #### Write
 
 ~~~csharp:write once
-Logger.Write(Logger.LogLevel.Error, "Write once");
+Logger.Write(LogLevel.Error, "Write once");
 ~~~
 
 ~~~csharp:write continuous
 Logger.Open();
 for (;;)
-  Logger.Write(Logger.LogLevel.Info, "Write continuously");
+  Logger.Write(LogLevel.Info, "Write continuously");
 Logger.Close();
 ~~~
 
@@ -114,5 +114,5 @@ Logger.Close();
   ("ID1", "Val1"),
   ("ID2", "Val2"),
 };
-Logger.Write(Logger.LogLevel.Error, "Set 2 IDs", ids);
+Logger.Write(LogLevel.Error, "Set 2 IDs", ids);
 ~~~

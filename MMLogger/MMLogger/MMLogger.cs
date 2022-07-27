@@ -32,38 +32,6 @@ namespace MMLogger
 
         #region Constants
         /// <summary>
-        /// Log level of Logger
-        /// </summary>
-        public enum LogLevel
-        {
-            /// <summary>
-            /// Lowest level for debug log
-            /// </summary>
-            /// <remarks>Output only specified string</remarks>
-            Debug = 0,
-            /// <summary>
-            /// For output informations
-            /// </summary>
-            /// <remarks>Output datetime and specified string</remarks>
-            Info = 1,
-            /// <summary>
-            /// Warning level
-            /// </summary>
-            /// <remarks>Output datetime, loglevel and specified string</remarks>
-            Warn = 2,
-            /// <summary>
-            /// Error level
-            /// </summary>
-            /// <remarks>Output datetime, loglevel and specified string</remarks>
-            Error = 3,
-            /// <summary>
-            /// Critical error level
-            /// </summary>
-            /// <remarks>Output datetime, loglevel and specified string</remarks>
-            Critical = 4,
-        }
-
-        /// <summary>
         /// Log level strings
         /// </summary>
         public static readonly Dictionary<LogLevel, string> LevelString = new Dictionary<LogLevel, string>
@@ -171,4 +139,38 @@ namespace MMLogger
         }
         #endregion
     }
+
+    #region Enum
+    /// <summary>
+    /// Log level of Logger
+    /// </summary>
+    public enum LogLevel
+    {
+        /// <summary>
+        /// Lowest level for debug log
+        /// </summary>
+        /// <remarks>Output only specified string</remarks>
+        Debug = 0,
+        /// <summary>
+        /// For output informations
+        /// </summary>
+        /// <remarks>Output datetime and specified string</remarks>
+        Info = 1,
+        /// <summary>
+        /// Warning level
+        /// </summary>
+        /// <remarks>Output datetime, loglevel and specified string</remarks>
+        Warn = 2,
+        /// <summary>
+        /// Error level
+        /// </summary>
+        /// <remarks>Output datetime, loglevel and specified string</remarks>
+        Error = 3,
+        /// <summary>
+        /// Critical error level
+        /// </summary>
+        /// <remarks>Output datetime, loglevel and specified string</remarks>
+        Critical = 4,
+    }
+    #endregion
 }

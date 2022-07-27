@@ -30,41 +30,6 @@
             Log file writer
             </summary>
         </member>
-        <member name="T:MMLogger.Logger.LogLevel">
-            <summary>
-            Log level of Logger
-            </summary>
-        </member>
-        <member name="F:MMLogger.Logger.LogLevel.Debug">
-            <summary>
-            Lowest level for debug log
-            </summary>
-            <remarks>Output only specified string</remarks>
-        </member>
-        <member name="F:MMLogger.Logger.LogLevel.Info">
-            <summary>
-            For output informations
-            </summary>
-            <remarks>Output datetime and specified string</remarks>
-        </member>
-        <member name="F:MMLogger.Logger.LogLevel.Warn">
-            <summary>
-            Warning level
-            </summary>
-            <remarks>Output datetime, loglevel and specified string</remarks>
-        </member>
-        <member name="F:MMLogger.Logger.LogLevel.Error">
-            <summary>
-            Error level
-            </summary>
-            <remarks>Output datetime, loglevel and specified string</remarks>
-        </member>
-        <member name="F:MMLogger.Logger.LogLevel.Critical">
-            <summary>
-            Critical error level
-            </summary>
-            <remarks>Output datetime, loglevel and specified string</remarks>
-        </member>
         <member name="F:MMLogger.Logger.LevelString">
             <summary>
             Log level strings
@@ -85,7 +50,7 @@
             Open for continuous use
             </summary>
         </member>
-        <member name="M:MMLogger.Logger.Write(MMLogger.Logger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
+        <member name="M:MMLogger.Logger.Write(MMLogger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
             <summary>
             Write log line
             </summary>
@@ -98,7 +63,7 @@
             Close for continuous use
             </summary>
         </member>
-        <member name="M:MMLogger.Logger.MakeLogLine(MMLogger.Logger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
+        <member name="M:MMLogger.Logger.MakeLogLine(MMLogger.LogLevel,System.String,System.ValueTuple{System.String,System.String}[])">
             <summary>
             Make log line
             </summary>
@@ -106,6 +71,41 @@
             <param name="contents">Log strings</param>
             <param name="lstID">Optional:Ids</param>
             <returns>LogLine</returns>
+        </member>
+        <member name="T:MMLogger.LogLevel">
+            <summary>
+            Log level of Logger
+            </summary>
+        </member>
+        <member name="F:MMLogger.LogLevel.Debug">
+            <summary>
+            Lowest level for debug log
+            </summary>
+            <remarks>Output only specified string</remarks>
+        </member>
+        <member name="F:MMLogger.LogLevel.Info">
+            <summary>
+            For output informations
+            </summary>
+            <remarks>Output datetime and specified string</remarks>
+        </member>
+        <member name="F:MMLogger.LogLevel.Warn">
+            <summary>
+            Warning level
+            </summary>
+            <remarks>Output datetime, loglevel and specified string</remarks>
+        </member>
+        <member name="F:MMLogger.LogLevel.Error">
+            <summary>
+            Error level
+            </summary>
+            <remarks>Output datetime, loglevel and specified string</remarks>
+        </member>
+        <member name="F:MMLogger.LogLevel.Critical">
+            <summary>
+            Critical error level
+            </summary>
+            <remarks>Output datetime, loglevel and specified string</remarks>
         </member>
     </members>
 </doc>
